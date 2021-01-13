@@ -12,6 +12,8 @@ import design.pattern.annotation.NotRecommended;
  *
  * 总结： 可用，但可能会造成内存浪费。
  *
+ * JDK 的Runtime就是用饿汉式实现的单例模式。
+ *
  * @author JerryWan
  * @descripion TODO
  * @date 2021-01-14  0:00
