@@ -1,6 +1,6 @@
 package design.pattern.creational.singleton;
 
-import design.pattern.annotation.NotRecommended;
+import design.pattern.annotation.Recommended;
 
 /**
  * 单例模式第2种实现方式：
@@ -16,7 +16,7 @@ import design.pattern.annotation.NotRecommended;
  * @descripion TODO
  * @date 2021-01-14  0:00
  */
-@NotRecommended
+@Recommended
 public class Singleton2 {
 
     /**

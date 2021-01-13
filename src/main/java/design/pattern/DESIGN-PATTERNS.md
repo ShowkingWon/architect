@@ -86,7 +86,7 @@
     但又经常用到的对象、工具类对象、频繁访问数据库或者文件的对象（比如数据源、session工厂等）。
 
 #### 源码举例
-    JDK 的Runtime就是用饿汉式实现的单例模式。
+    JDK java.lang.Runtime就是经典的用饿汉式实现的单例模式。
 #### 深度阅读
     https://www.infoq.cn/article/double-checked-locking-with-delay-initialization/
 
