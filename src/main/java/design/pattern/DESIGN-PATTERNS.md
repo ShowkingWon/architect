@@ -48,6 +48,58 @@
     
 ### Factory Method
     定义一个用于对象对象的接口，让子类决定将哪一个类实例化。Factory Method使一个类的实例化延迟到了其子类。
+#### 意图（intent)或者动机（motivation）
+    Factory method is a creational design pattern which solves the problem of creating product objects 
+    without specifying their concrete classes.
+    工厂方法是一种创建设计模式，它提供了在超类中创建对象的接口，但允许子类更改将要创建的对象的类型。
+#### 应用场景
+    当您事先不知道代码应该处理的对象的确切类型和依赖关系时，可以使用Factory方法。
+    当您希望为库或框架的用户提供扩展其内部组件的方法时，请使用Factory方法。
+    当您希望通过重用现有对象而不是每次都重新构建它们来节省系统资源时，请使用Factory方法。
+#### 如何实现
+    1.Make all products follow the same interface. This interface should declare methods that make sense in every product.
+    
+    2.Add an empty factory method inside the creator class. The return type of the method should match the common product interface.
+    
+    3.In the creator’s code find all references to product constructors. One by one, replace them with calls to the factory method, 
+    while extracting the product creation code into the factory method.
+    
+        You might need to add a temporary parameter to the factory method to control the type of returned product.
+    
+        At this point, the code of the factory method may look pretty ugly. It may have a large switch operator 
+        that picks which product class to instantiate. But don’t worry, we’ll fix it soon enough.
+    
+    4.Now, create a set of creator subclasses for each type of product listed in the factory method. 
+        Override the factory method in the subclasses and extract the appropriate bits of construction code from the base method.
+    
+    5.If there are too many product types and it doesn’t make sense to create subclasses for all of them, 
+        you can reuse the control parameter from the base class in subclasses.
+      
+      For instance, imagine that you have the following hierarchy of classes: the base Mail class with a couple of subclasses: 
+      AirMail and GroundMail; the Transport classes are Plane, Truck and Train. While the AirMail class only uses Plane objects, 
+      GroundMail may work with both Truck and Train objects. You can create a new subclass (say TrainMail) to handle both cases, 
+      but there’s another option. The client code can pass an argument to the factory method of the GroundMail class to control which product it wants to receive.
+      
+    6.If, after all of the extractions, the base factory method has become empty, you can make it abstract. 
+        If there’s something left, you can make it a default behavior of the method.
+#### Pros and Cons
+    优点
+    1.您避免了创建者和具体产品之间的紧密耦合。
+    2.单一责任原则。您可以将产品创建代码移动到程序中的一个位置，使代码更容易支持。
+    3.打开/关闭原则。您可以在不破坏现有客户机代码的情况下将新类型的产品引入程序。
+    
+    缺点
+    代码可能会变得更加复杂，因为您需要引入许多新的子类来实现模式。最好的情况是将模式引入到现有的创建者类层次结构中。
+    
+#### 源码举例
+    java.util.Calendar#getInstance()
+    java.util.ResourceBundle#getBundle()
+    java.text.NumberFormat#getInstance()
+    java.nio.charset.Charset#forName()
+    java.util.EnumSet#of()    
+
+#### Simple factory pattern
+    简单工厂模式描述了一个具有一个创建方法和一个大型条件的类，该条件基于方法参数选择实例化哪个产品类并返回。
     
 ### Flyweight
     运用共享技术有效地支持大量细粒度的对象。  
