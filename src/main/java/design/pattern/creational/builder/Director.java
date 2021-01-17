@@ -5,7 +5,7 @@ package design.pattern.creational.builder;
  * through common Builder interface. Therefore it may not know what product is
  * being built.
  * @description .
- * @autuor Jerry Wan
+ * @author Jerry Wan
  * @date 2021-01-16 17:11
  */
 public class Director {

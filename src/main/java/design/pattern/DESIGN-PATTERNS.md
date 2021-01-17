@@ -23,7 +23,16 @@
     将抽象部分与它的实现部分分离，使它们都可以独立地变化。
 
 ### Builder 
+#### 意图
     将一个复杂对象的构建和它的表示分离，使得同样的构建过程可以创建不同的表示。
+#### 源码举例
+        Builder is widely used in Java core libraries:
+        
+        java.lang.StringBuilder#append() (unsynchronized)
+        java.lang.StringBuffer#append() (synchronized)
+        java.nio.ByteBuffer#put() (also in CharBuffer, ShortBuffer, IntBuffer, LongBuffer,  FloatBuffer and DoubleBuffer)
+        javax.swing.GroupLayout.Group#addComponent()
+        All implementations java.lang.Appendable
 
 ### Chain of Responsibility  
     为解除请求的发送者和接收者之间耦合，而使多个对象都有机会处理这个请求。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它。

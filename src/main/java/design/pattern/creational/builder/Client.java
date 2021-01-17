@@ -1,12 +1,12 @@
 package design.pattern.creational.builder;
 
 /**
- * Demo class. Everything comes together here.
+ * Client class. Everything comes together here.
  * @author JerryWan
  * @descripion TODO
  * @date 2021-01-11  0:12
  */
-public class Demo {
+public class Client {
 
     public static void main(String[] args) {
 
