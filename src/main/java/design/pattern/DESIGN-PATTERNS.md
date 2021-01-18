@@ -119,8 +119,24 @@
 ### Observer
     定义对象间的一种一对多的依赖关系，以便当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并自动更新。
 
-### Prototype
+### Prototype  Also known as: Clone
     用原型实例指定创建对象的种类，并且通过拷贝这个原型来创建新的对象。
+#### Intent 
+    Prototype is a creational design pattern that lets you copy existing objects 
+    without making your code dependent on their classes.
+        
+    
+    原型模式将克隆过程委托给正在被克隆的实际对象。该模式为所有支持克隆的对象声明了一个公共接口。
+    该接口允许您克隆对象，而无需将代码耦合到该对象的类。通常，这样的接口只包含一个克隆方法。
+
+#### Structure
+    1.Prototype
+        Prototype接口声明了克隆方法。在大多数情况下，这是一个单一的克隆方法。
+    2.ConcretePrototype
+        具体的原型类实现了克隆方法。除了将原始对象的数据复制到克隆对象之外，该方法还可以处理
+        克隆过程中与克隆链接对象相关的一些边缘情况，解缠递归依赖关系等。
+    3.Client
+        客户端可以生成遵循prototype接口的任何对象的副本
 
 ### Proxy
     为其他对象提供一个代理以控制对这个对象的访问。
