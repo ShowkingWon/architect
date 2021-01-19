@@ -98,8 +98,11 @@
     java.nio.charset.Charset#forName()
     java.util.EnumSet#of()    
 
-#### Simple factory pattern
+#### Simple factory pattern 
+
+    并不算一个严格的设计模式。
     简单工厂模式描述了一个具有一个创建方法和一个大型条件的类，该条件基于方法参数选择实例化哪个产品类并返回。
+    本质-->选择实现！ 负责创建接口对象。 选择合适的实现类来创建接口的对象。
     
 ### Flyweight
     运用共享技术有效地支持大量细粒度的对象。  
