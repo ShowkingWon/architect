@@ -11,14 +11,60 @@
     解决方案        solution
     效果           consequences
     
+### 2.怎样选择设计模式
+#### 考虑设计模式是怎样解决设计问题的
+#### 浏览模式的意图（intent）部分    
+#### 研究模式怎样相互关联    
+#### 研究目的相似的模式    
+#### 检查重新设计的原因
+    通过显式地指定一个类来创建对象
+    对特殊操作的依赖
+    对硬件和软件平台的依赖
+    对对象表示或实现的依赖
+    算法依赖
+    紧耦合
+    通过生成子类来扩展功能
+    不能方便的对类进行修改   
     
 ##设计模式编目
-### Abstract Factory 抽象工厂
+
+### 创建型Creational
+    与对象的创建有关
+### 结构型
+    处理类或对象的组合
+### 行为型
+    对类或对象怎样交互和怎样分配职责进行描述
+### 类模式
+    处理类和子类之间的关系。这些关系通过继承建立，是静态的，在编译时刻便确定下来了
+### 对象模式
+    处理对象间的关系   
+    
+### Abstract Factory 抽象工厂  --
     提供创建一系列相关或者相互依赖对象的接口，而无需指定它们具体的类。
     
-### Adapter 
+### Adapter 适配器模式， 别名包装器 Wrapper   --类对象结构型模式  
     将一个类的接口转成客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
+    转换匹配，复用功能
+#### 结构
+    Client
+        客户端，调用自己需要的领域接口Target。
+    Target
+        定义客户端需要的跟特定领域相关的接口。
+    Adaptee
+        已经存在的接口，通常能满足客户端的需求，但是接口与客户端要求的特定领域接口不一致，需要被适配。
+    Adapter
+        适配器。把Adaptee适配成Client需要Target。
+        
+#### 源码示例
+    There are some standard Adapters in Java core libraries:
     
+    java.util.Arrays#asList()
+    java.util.Collections#list()
+    java.util.Collections#enumeration()
+    java.io.InputStreamReader(InputStream) (returns a Reader object)
+    java.io.OutputStreamWriter(OutputStream) (returns a Writer object)
+    javax.xml.bind.annotation.adapters.XmlAdapter#marshal() and #unmarshal()
+
 ### Bridge 
     将抽象部分与它的实现部分分离，使它们都可以独立地变化。
 
