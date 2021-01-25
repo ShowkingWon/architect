@@ -2,6 +2,7 @@ package design.pattern.creational.factorymethod;
 
 
 /**
+ * 通用产品接口。
  * Common interface for all buttons.
  *
  * @creator wx
