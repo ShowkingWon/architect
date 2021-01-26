@@ -4,6 +4,7 @@ import design.pattern.annotation.Recommended;
 
 /**
  * 单例模式第7种实现方式：
+ *  Bill Pugh Singleton Implementation
  *
  * 静态内部类
  * 特性： 外部类加载时并不需要立即加载内部类，内部类不被加载则不去初始化INSTANCE，故而不占内存。
