@@ -12,7 +12,7 @@ package design.pattern.structural.adapter;
  */
 public class SquarePegAdapter extends RoundPeg{
 
-    //通过组合方式
+    //通过组合方式  对象适配器
     private SquarePeg peg;
 
 
