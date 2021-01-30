@@ -43,7 +43,6 @@ public class Singleton6 {
             }
         }
         return instance;
-
     }
 
 
