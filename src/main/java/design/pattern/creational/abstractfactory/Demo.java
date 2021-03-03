@@ -1,7 +1,7 @@
 package design.pattern.creational.abstractfactory;
 
 /**
- * Demo class. Everything comes together here.
+ * search class. Everything comes together here.
  * @author JerryWan
  * @descripion TODO
  * @date 2021-01-26  0:41
