@@ -2,7 +2,7 @@ package concurrent.jcip.examples;
 
 import java.util.concurrent.atomic.*;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.*;
 
 /**
  * AtomicPseudoRandom

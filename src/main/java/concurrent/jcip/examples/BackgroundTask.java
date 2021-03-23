@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-public abstract class BackgroundTask <V> implements Runnable, Future<V> {
+public abstract class BackgroundTask<V> implements Runnable, Future<V> {
     private final FutureTask<V> computation = new Computation();
 
     private class Computation extends FutureTask<V> {
@@ -38,7 +38,9 @@ public abstract class BackgroundTask <V> implements Runnable, Future<V> {
                     } finally {
                         onCompletion(value, thrown, cancelled);
                     }
-                };
+                }
+
+                ;
             });
         }
     }

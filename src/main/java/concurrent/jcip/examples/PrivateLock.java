@@ -11,7 +11,8 @@ import net.jcip.annotations.*;
  */
 public class PrivateLock {
     private final Object myLock = new Object();
-    @GuardedBy("myLock") Widget widget;
+    @GuardedBy("myLock")
+    Widget widget;
 
     void someMethod() {
         synchronized (myLock) {

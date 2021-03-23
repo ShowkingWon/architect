@@ -3,7 +3,7 @@ package concurrent.jcip.examples;
 import java.math.BigInteger;
 import javax.servlet.*;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.*;
 
 /**
  * Factorizer

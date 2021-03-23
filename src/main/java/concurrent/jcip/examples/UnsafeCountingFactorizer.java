@@ -7,7 +7,7 @@ import net.jcip.annotations.*;
 
 /**
  * UnsafeCountingFactorizer
- *
+ * <p>
  * Servlet that counts requests without the necessary synchronization
  *
  * @author Brian Goetz and Tim Peierls
@@ -36,6 +36,6 @@ public class UnsafeCountingFactorizer extends GenericServlet implements Servlet 
 
     BigInteger[] factor(BigInteger i) {
         // Doesn't really factor
-        return new BigInteger[] { i };
+        return new BigInteger[]{i};
     }
 }

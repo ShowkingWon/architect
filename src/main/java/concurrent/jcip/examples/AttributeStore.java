@@ -3,7 +3,7 @@ package concurrent.jcip.examples;
 import java.util.*;
 import java.util.regex.*;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.*;
 
 /**
  * AttributeStore
@@ -14,7 +14,8 @@ import net.jcip.annotations.*;
  */
 @ThreadSafe
 public class AttributeStore {
-    @GuardedBy("this") private final Map<String, String>
+    @GuardedBy("this")
+    private final Map<String, String>
             attributes = new HashMap<String, String>();
 
     public synchronized boolean userLocationMatches(String name,

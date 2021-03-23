@@ -7,13 +7,14 @@ import net.jcip.annotations.*;
 
 /**
  * Memoizer1
- *
+ * <p>
  * Initial cache attempt using HashMap and synchronization
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class Memoizer1 <A, V> implements Computable<A, V> {
-    @GuardedBy("this") private final Map<A, V> cache = new HashMap<A, V>();
+public class Memoizer1<A, V> implements Computable<A, V> {
+    @GuardedBy("this")
+    private final Map<A, V> cache = new HashMap<A, V>();
     private final Computable<A, V> c;
 
     public Memoizer1(Computable<A, V> c) {
@@ -31,7 +32,7 @@ public class Memoizer1 <A, V> implements Computable<A, V> {
 }
 
 
-interface Computable <A, V> {
+interface Computable<A, V> {
     V compute(A arg) throws InterruptedException;
 }
 

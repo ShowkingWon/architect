@@ -117,6 +117,7 @@ public class ListenerExamples {
             public void actionPerformed(ActionEvent e) {
                 class CancelListener implements ActionListener {
                     BackgroundTask<?> task;
+
                     public void actionPerformed(ActionEvent event) {
                         if (task != null)
                             task.cancel(true);

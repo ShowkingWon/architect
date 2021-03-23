@@ -1,6 +1,6 @@
 package concurrent.jcip.examples;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.*;
 
 /**
  * CasCounter

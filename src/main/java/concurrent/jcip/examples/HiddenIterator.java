@@ -12,7 +12,8 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 public class HiddenIterator {
-    @GuardedBy("this") private final Set<Integer> set = new HashSet<Integer>();
+    @GuardedBy("this")
+    private final Set<Integer> set = new HashSet<Integer>();
 
     public synchronized void add(Integer i) {
         set.add(i);

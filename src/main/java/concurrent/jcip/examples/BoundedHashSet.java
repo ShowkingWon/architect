@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class BoundedHashSet <T> {
+public class BoundedHashSet<T> {
     private final Set<T> set;
     private final Semaphore sem;
 

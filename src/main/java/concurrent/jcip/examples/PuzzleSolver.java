@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class PuzzleSolver <P,M> extends ConcurrentPuzzleSolver<P, M> {
+public class PuzzleSolver<P, M> extends ConcurrentPuzzleSolver<P, M> {
     PuzzleSolver(Puzzle<P, M> puzzle) {
         super(puzzle);
     }

@@ -9,7 +9,7 @@ package concurrent.jcip.examples;
  */
 class UnsafeStates {
     private String[] states = new String[]{
-        "AK", "AL" /*...*/
+            "AK", "AL" /*...*/
     };
 
     public String[] getStates() {

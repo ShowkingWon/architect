@@ -1,11 +1,12 @@
 package concurrent.jcip.examples;
 
 import java.util.concurrent.*;
+
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 /**
  * RenderWithTimeBudget
- *
+ * <p>
  * Fetching an advertisement with a time budget
  *
  * @author Brian Goetz and Tim Peierls
@@ -35,14 +36,17 @@ public class RenderWithTimeBudget {
         return page;
     }
 
-    Page renderPageBody() { return new Page(); }
+    Page renderPageBody() {
+        return new Page();
+    }
 
 
     static class Ad {
     }
 
     static class Page {
-        public void setAd(Ad ad) { }
+        public void setAd(Ad ad) {
+        }
     }
 
     static class FetchAdTask implements Callable<Ad> {

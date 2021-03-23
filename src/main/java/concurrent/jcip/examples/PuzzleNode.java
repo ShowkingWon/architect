@@ -12,7 +12,7 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @Immutable
-public class PuzzleNode <P, M> {
+public class PuzzleNode<P, M> {
     final P pos;
     final M move;
     final PuzzleNode<P, M> prev;

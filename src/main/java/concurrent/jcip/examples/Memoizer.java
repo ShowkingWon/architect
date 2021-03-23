@@ -9,7 +9,7 @@ import java.util.concurrent.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-public class Memoizer <A, V> implements Computable<A, V> {
+public class Memoizer<A, V> implements Computable<A, V> {
     private final ConcurrentMap<A, Future<V>> cache
             = new ConcurrentHashMap<A, Future<V>>();
     private final Computable<A, V> c;

@@ -1,6 +1,7 @@
 package concurrent.jcip.examples;
 
-import net.jcip.annotations.*;
+
+import concurrent.jcip.annotations.ThreadSafe;
 
 /**
  * SleepyBoundedBuffer
@@ -10,7 +11,7 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-        public class SleepyBoundedBuffer <V> extends BaseBoundedBuffer<V> {
+public class SleepyBoundedBuffer<V> extends BaseBoundedBuffer<V> {
     int SLEEP_GRANULARITY = 60;
 
     public SleepyBoundedBuffer() {
@@ -36,8 +37,9 @@ import net.jcip.annotations.*;
     public V take() throws InterruptedException {
         while (true) {
             synchronized (this) {
-                if (!isEmpty())
+                if (!isEmpty()) {
                     return doTake();
+                }
             }
             Thread.sleep(SLEEP_GRANULARITY);
         }

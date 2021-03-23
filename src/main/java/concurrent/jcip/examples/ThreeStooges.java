@@ -13,7 +13,7 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @Immutable
- public final class ThreeStooges {
+public final class ThreeStooges {
     private final Set<String> stooges = new HashSet<String>();
 
     public ThreeStooges() {

@@ -71,7 +71,9 @@ public class ProducerConsumer {
 
         public void indexFile(File file) {
             // Index the file...
-        };
+        }
+
+        ;
     }
 
     private static final int BOUND = 10;

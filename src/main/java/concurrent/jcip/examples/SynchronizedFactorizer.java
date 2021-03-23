@@ -7,7 +7,7 @@ import net.jcip.annotations.*;
 
 /**
  * SynchronizedFactorizer
- *
+ * <p>
  * Servlet that caches last result, but with unnacceptably poor concurrency
  *
  * @author Brian Goetz and Tim Peierls
@@ -15,8 +15,10 @@ import net.jcip.annotations.*;
 
 @ThreadSafe
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
-    @GuardedBy("this") private BigInteger lastNumber;
-    @GuardedBy("this") private BigInteger[] lastFactors;
+    @GuardedBy("this")
+    private BigInteger lastNumber;
+    @GuardedBy("this")
+    private BigInteger[] lastFactors;
 
     public synchronized void service(ServletRequest req,
                                      ServletResponse resp) {
@@ -40,7 +42,7 @@ public class SynchronizedFactorizer extends GenericServlet implements Servlet {
 
     BigInteger[] factor(BigInteger i) {
         // Doesn't really factor
-        return new BigInteger[] { i };
+        return new BigInteger[]{i};
     }
 }
 

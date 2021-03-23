@@ -63,7 +63,7 @@ public abstract class TransformingSequential {
     interface Element {
     }
 
-    interface Node <T> {
+    interface Node<T> {
         T compute();
 
         List<Node<T>> getChildren();

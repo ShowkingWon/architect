@@ -1,6 +1,7 @@
 package concurrent.jcip.examples;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.GuardedBy;
+import concurrent.jcip.annotations.ThreadSafe;
 
 /**
  * BaseBoundedBuffer
@@ -10,28 +11,37 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-public abstract class BaseBoundedBuffer <V> {
-    @GuardedBy("this") private final V[] buf;
-    @GuardedBy("this") private int tail;
-    @GuardedBy("this") private int head;
-    @GuardedBy("this") private int count;
+public abstract class BaseBoundedBuffer<V> {
+    @GuardedBy("this")
+    private final V[] buf;
+    @GuardedBy("this")
+    private int tail;
+    @GuardedBy("this")
+    private int head;
+    @GuardedBy("this")
+    private int count;
 
     protected BaseBoundedBuffer(int capacity) {
+        // 有界数组
         this.buf = (V[]) new Object[capacity];
     }
 
     protected synchronized final void doPut(V v) {
+        // 尾部入列 队列数递增
         buf[tail] = v;
-        if (++tail == buf.length)
+        if (++tail == buf.length) {
             tail = 0;
+        }
         ++count;
     }
 
     protected synchronized final V doTake() {
+        // 取出队列头部元素 队列头部置空 队列数递减 返回原队列头部元素
         V v = buf[head];
         buf[head] = null;
-        if (++head == buf.length)
+        if (++head == buf.length) {
             head = 0;
+        }
         --count;
         return v;
     }

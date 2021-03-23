@@ -1,6 +1,6 @@
 package concurrent.jcip.examples;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.*;
 
 /**
  * EagerInitialization
@@ -10,7 +10,7 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-        public class EagerInitialization {
+public class EagerInitialization {
     private static Resource resource = new Resource();
 
     public static Resource getResource() {

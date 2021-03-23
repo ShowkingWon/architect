@@ -1,6 +1,7 @@
 package concurrent.jcip.examples;
 
 import java.util.concurrent.*;
+
 import static java.util.concurrent.Executors.newScheduledThreadPool;
 import static net.jcip.examples.LaunderThrowable.launderThrowable;
 

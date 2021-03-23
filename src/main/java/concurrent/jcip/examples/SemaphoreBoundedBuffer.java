@@ -12,10 +12,12 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-public class SemaphoreBoundedBuffer <E> {
+public class SemaphoreBoundedBuffer<E> {
     private final Semaphore availableItems, availableSpaces;
-    @GuardedBy("this") private final E[] items;
-    @GuardedBy("this") private int putPosition = 0, takePosition = 0;
+    @GuardedBy("this")
+    private final E[] items;
+    @GuardedBy("this")
+    private int putPosition = 0, takePosition = 0;
 
     public SemaphoreBoundedBuffer(int capacity) {
         if (capacity <= 0)

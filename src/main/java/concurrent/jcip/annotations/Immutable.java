@@ -1,4 +1,5 @@
 package concurrent.jcip.annotations;
+
 import java.lang.annotation.*;
 
 /*
@@ -19,7 +20,7 @@ import java.lang.annotation.*;
  * <li> all public fields are final, </li>
  * <li> all public final reference fields refer to other immutable objects, and </li>
  * <li> constructors and methods do not publish references to any internal state
- *      which is potentially mutable by the implementation. </li>
+ * which is potentially mutable by the implementation. </li>
  * </ul>
  * Immutable objects may still have internal mutable state for purposes of performance
  * optimization; some state variables may be lazily computed, so long as they are computed

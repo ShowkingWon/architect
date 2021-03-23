@@ -2,6 +2,7 @@ package concurrent.jcip.examples;
 
 import java.util.*;
 import java.util.concurrent.*;
+
 import static net.jcip.examples.LaunderThrowable.launderThrowable;
 
 /**

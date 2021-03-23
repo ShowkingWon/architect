@@ -27,6 +27,8 @@ public abstract class SingleThreadRenderer {
     }
 
     abstract void renderText(CharSequence s);
+
     abstract List<ImageInfo> scanForImageInfo(CharSequence s);
+
     abstract void renderImage(ImageData i);
 }

@@ -1,16 +1,22 @@
 package concurrent.jcip.examples;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.ThreadSafe;
 
 /**
  * BoundedBuffer
+ * <p>
+ * from: 从SleepyBoundedBuffer中优化而来
+ * SleepyBoundedBuffer通过 轮询+休眠
+ * <p>
+ * to: 继续向ConditionBoundedBuffer演进, 因为它使用单一通知,而不是notifyAll,效率更高!
+ * <p>
  * <p/>
  * Bounded buffer using condition queues
  *
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-        public class BoundedBuffer <V> extends BaseBoundedBuffer<V> {
+public class BoundedBuffer<V> extends BaseBoundedBuffer<V> {
     // CONDITION PREDICATE: not-full (!isFull())
     // CONDITION PREDICATE: not-empty (!isEmpty())
     public BoundedBuffer() {
@@ -23,16 +29,18 @@ import net.jcip.annotations.*;
 
     // BLOCKS-UNTIL: not-full
     public synchronized void put(V v) throws InterruptedException {
-        while (isFull())
+        while (isFull()) {
             wait();
+        }
         doPut(v);
         notifyAll();
     }
 
     // BLOCKS-UNTIL: not-empty
     public synchronized V take() throws InterruptedException {
-        while (isEmpty())
+        while (isEmpty()) {
             wait();
+        }
         V v = doTake();
         notifyAll();
         return v;
@@ -41,11 +49,13 @@ import net.jcip.annotations.*;
     // BLOCKS-UNTIL: not-full
     // Alternate form of put() using conditional notification
     public synchronized void alternatePut(V v) throws InterruptedException {
-        while (isFull())
+        while (isFull()) {
             wait();
+        }
         boolean wasEmpty = isEmpty();
         doPut(v);
-        if (wasEmpty)
+        if (wasEmpty) {
             notifyAll();
+        }
     }
 }

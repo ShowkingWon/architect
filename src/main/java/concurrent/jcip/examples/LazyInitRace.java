@@ -4,7 +4,7 @@ import net.jcip.annotations.*;
 
 /**
  * LazyInitRace
- *
+ * <p>
  * Race condition in lazy initialization
  *
  * @author Brian Goetz and Tim Peierls
@@ -21,5 +21,6 @@ public class LazyInitRace {
     }
 }
 
-class ExpensiveObject { }
+class ExpensiveObject {
+}
 

@@ -2,7 +2,7 @@ package concurrent.jcip.examples;
 
 import java.util.*;
 
-import net.jcip.annotations.*;
+import concurrent.jcip.annotations.*;
 
 /**
  * CooperatingDeadlock
@@ -14,7 +14,8 @@ import net.jcip.annotations.*;
 public class CooperatingDeadlock {
     // Warning: deadlock-prone!
     class Taxi {
-        @GuardedBy("this") private Point location, destination;
+        @GuardedBy("this")
+        private Point location, destination;
         private final Dispatcher dispatcher;
 
         public Taxi(Dispatcher dispatcher) {
@@ -41,8 +42,10 @@ public class CooperatingDeadlock {
     }
 
     class Dispatcher {
-        @GuardedBy("this") private final Set<Taxi> taxis;
-        @GuardedBy("this") private final Set<Taxi> availableTaxis;
+        @GuardedBy("this")
+        private final Set<Taxi> taxis;
+        @GuardedBy("this")
+        private final Set<Taxi> availableTaxis;
 
         public Dispatcher() {
             taxis = new HashSet<Taxi>();

@@ -12,9 +12,9 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 @ThreadSafe
-public class LinkedQueue <E> {
+public class LinkedQueue<E> {
 
-    private static class Node <E> {
+    private static class Node<E> {
         final E item;
         final AtomicReference<Node<E>> next;
 

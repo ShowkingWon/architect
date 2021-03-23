@@ -1,6 +1,7 @@
 package concurrent.jcip.examples;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.*;
@@ -18,7 +19,8 @@ import net.jcip.annotations.*;
 public class PrimeGenerator implements Runnable {
     private static ExecutorService exec = Executors.newCachedThreadPool();
 
-    @GuardedBy("this") private final List<BigInteger> primes
+    @GuardedBy("this")
+    private final List<BigInteger> primes
             = new ArrayList<BigInteger>();
     private volatile boolean cancelled;
 
