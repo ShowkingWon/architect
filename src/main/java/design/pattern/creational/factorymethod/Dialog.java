@@ -12,18 +12,16 @@ package design.pattern.creational.factorymethod;
  */
 public abstract class Dialog {
 
-
     public void renderWindow() {
         // ... other code ...
-
         Button okButton = createButton();
         okButton.render();
     }
 
-
     /**
      * Subclasses will override this method in order to create specific button
      * objects.
+     * @return button
      */
     public abstract Button createButton();
 }

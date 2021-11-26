@@ -35,13 +35,14 @@ package design.pattern.creational.factorymethod;
  *  如果您在基类中有一个创建方法以及扩展它的子类，那么您可能需要查看工厂方法。
  *
  *
- *
  * @author JerryWan
  * @descripion TODO
  * @date 2021-01-11  0:12
  */
 public class Demo {
 
+    private static final String OS_NAME_FLAG = "os.name";
+    private static final String OS_WINDOWS = "Windows 10";
 
     /**
      * Base creator
@@ -61,7 +62,7 @@ public class Demo {
      * environment options.
      */
     static void configure() {
-        if (System.getProperty("os.name").equals("Windows 10")) {
+        if (System.getProperty(OS_NAME_FLAG).equals(OS_WINDOWS)) {
             dialog = new WindowsDialog();
         } else {
             dialog = new HtmlDialog();
